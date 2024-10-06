@@ -29,16 +29,36 @@ function App() {
         <Loader />:
         <Banner value={searchWord} onChange ={(e) => setSearchWord(e.target.value)} size={res.length}>
           <ButtonGroup>
-              <Button color="btn btn-outline-dark" onClick={() => setRSelected(0)} active={rSelected === 0}>
+              <Button 
+                color="btn btn-outline-dark" 
+                onClick={() => setRSelected(0)} 
+                active={rSelected === 0}
+                style={{fontSize:"14px"}}
+                >
                 Default
               </Button>
-              <Button color="btn btn-outline-dark" onClick={() => setRSelected(1)} active={rSelected === 1}>
+              <Button 
+                color="btn btn-outline-dark" 
+                onClick={() => setRSelected(1)} 
+                active={rSelected === 1}
+                style={{fontSize:"14px"}}
+                >
                   Most Liked
               </Button>
-              <Button color="btn btn-outline-dark" onClick={() => setRSelected(2)} active={rSelected === 2}>
+              <Button 
+                color="btn btn-outline-dark" 
+                onClick={() => setRSelected(2)} 
+                active={rSelected === 2}
+                style={{fontSize:"14px"}}
+                >
                   More Calories
               </Button>
-              <Button color="btn btn-outline-dark" onClick={() => setRSelected(3)} active={rSelected === 3}>
+              <Button 
+                color="btn btn-outline-dark" 
+                onClick={() => setRSelected(3)} 
+                active={rSelected === 3}
+                style={{fontSize:"14px"}}
+                >
                   Quickest
               </Button>
           </ButtonGroup>
