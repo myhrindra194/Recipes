@@ -18,6 +18,9 @@ function App() {
   })
 
   const res = searchRecipe(recipes, searchWord);
+  // const category = [...new Set(res.map(item => item.cuisine))]
+  
+  
 
   return (
     <div className="container">

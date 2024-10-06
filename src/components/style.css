@@ -1,4 +1,4 @@
-img {
+.hiddenImage {
     position: relative;
     z-index: 1;
     transform: translateY(50%);
