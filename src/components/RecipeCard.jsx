@@ -3,7 +3,7 @@ import { Card, CardBody, CardTitle, CardSubtitle,CardText, CardFooter, Button } 
 import "./style.css";
 import { useState } from "react";
 
-export default function RecipeCard({ name, image, prepMin, cookMin, rating, reviewCount,instructions, ingredients, serving }){
+export default function RecipeCard({ name, image, prepMin, cookMin, rating, reviewCount,instructions, ingredients, serving, calories }){
     const [showed, setShowed] = useState(false);
 
     return showed ?
@@ -14,7 +14,7 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
             </CardTitle>
             <CardBody className="d-flex justify-content-between pb-5">
                 <div className="col-3 d-flex justify-content-center">
-                    <img src={image} alt={name} className="col-10 img-fluid rounded-circle shadow"/>
+                    <img src={image} alt={name} className="img-fluid rounded-circle shadow"/>
                 </div>
                 <div className="col-3 pt-5">
                     <h3>The ingredients:</h3>
@@ -42,7 +42,11 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
                     <i className="fas fa-bowl-food me-2 fs-4" style={{color:"#FFD43B"}}></i>
                         Serving: {serving}
                     </CardText>
-                            <CardText>
+                    <CardText>
+                        <i className="fas fa-dumbbell me-2 fs-4" style={{color:"#FFD43B"}}></i>
+                        {calories} Cal 
+                    </CardText>
+                    <CardText>
                         <i className="fas fa-star me-2 fs-4" style={{color:"#FFD43B"}}></i>
                         {rating} 
                         <span className="text-muted ms-2">({reviewCount} reviews)</span> 

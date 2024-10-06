@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
-import Banner from "./components/Banner";
+// import Banner from "./components/Banner";
 import Loader from "./components/Loader";
 import ListRecipe from "./components/ListRecipe";
-import { searchRecipe } from "./utils/script";
+import { filterRecipe } from "./utils/script";
+import { Button, ButtonGroup } from "reactstrap";
+import Banner from "./components/Banner";
+
 
 function App() {
 
   const [recipes, setRecipes] = useState([]);
   const [searchWord, setSearchWord] = useState("");
+  const [rSelected, setRSelected] = useState(0);
 
   
   useEffect(() => {
@@ -17,21 +21,31 @@ function App() {
     .catch(error => {console.error("Error of connection while fetching data"), error})
   })
 
-  const res = searchRecipe(recipes, searchWord);
-  // const category = [...new Set(res.map(item => item.cuisine))]
-  
+  const res = filterRecipe(recipes, searchWord, rSelected);
   
 
   return (
     <div className="container">
-      
       {
         (recipes.length === 0) ?
         <Loader />:
-        <>
-          <Banner size={recipes.length} value={searchWord} onChange={(e) => setSearchWord(e.target.value)}/>
+        <Banner value={searchWord} onChange ={(e) => setSearchWord(e.target.value)} size={res.length}>
+          <ButtonGroup>
+              <Button color="btn btn-outline-dark" onClick={() => setRSelected(1)} active={rSelected === 0}>
+                Default
+              </Button>
+              <Button color="btn btn-outline-dark" onClick={() => setRSelected(1)} active={rSelected === 1}>
+                  Most Liked
+              </Button>
+              <Button color="btn btn-outline-dark" onClick={() => setRSelected(2)} active={rSelected === 2}>
+                  More Calories
+              </Button>
+              <Button color="btn btn-outline-dark" onClick={() => setRSelected(3)} active={rSelected === 3}>
+                  Quickest
+              </Button>
+          </ButtonGroup>
           <ListRecipe myRecipes={res}/>
-        </>
+        </Banner>
       }
     </div>
   )

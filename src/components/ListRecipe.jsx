@@ -9,7 +9,7 @@ export default function ListRecipe({myRecipes}){
         </div>
     ):
     (
-        <div className="d-flex row justify-content-center align-items-start my-5">
+        <div className="d-flex row justify-content-center align-items-start">
         {
             myRecipes.map(recipe => (
                 <RecipeCard 
@@ -23,6 +23,7 @@ export default function ListRecipe({myRecipes}){
                     ingredients={recipe.ingredients}
                     instructions={recipe.instructions}
                     serving={recipe.servings}
+                    calories={recipe.caloriesPerServing}
                 />
             ))
 
