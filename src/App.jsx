@@ -43,7 +43,7 @@ function App() {
                 active={rSelected === 1}
                 style={{fontSize:"14px"}}
                 >
-                  Most Liked
+                  Rating
               </Button>
               <Button 
                 color="btn btn-outline-dark" 
@@ -51,7 +51,7 @@ function App() {
                 active={rSelected === 2}
                 style={{fontSize:"14px"}}
                 >
-                  More Calories
+                  Calories
               </Button>
               <Button 
                 color="btn btn-outline-dark" 
@@ -59,7 +59,7 @@ function App() {
                 active={rSelected === 3}
                 style={{fontSize:"14px"}}
                 >
-                  Quickest
+                  Cooking time
               </Button>
           </ButtonGroup>
           <ListRecipe myRecipes={res}/>

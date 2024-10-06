@@ -14,7 +14,7 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
             </CardTitle>
             <CardBody className="d-lg-flex justify-content-between pb-5">
                 <div className="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center mx-auto">
-                    <img src={image} alt={name} className="img-fluid rounded-circle shadow"/>
+                    <img src={image} alt={name} className="img-fluid round  ed-circle shadow"/>
                 </div>
                 <div className="col-md-6 col-sm-12 col-lg-3 pt-5">
                     <h3>The ingredients:</h3>
@@ -34,32 +34,32 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
                 </div>
             </CardBody>
             <CardFooter className="d-md-flex justify-content-between bg-transparent align-items-center">
-                    <CardText>
-                        <i className="fas fa-clock me-2 fs-4" style={{color:"#FFD43B"}}></i>
-                        {prepMin + cookMin} min 
-                    </CardText>
-                    <CardText>
-                    <i className="fas fa-bowl-food me-2 fs-4" style={{color:"#FFD43B"}}></i>
-                        Serving: {serving}
-                    </CardText>
-                    <CardText>
-                        <i className="fas fa-dumbbell me-2 fs-4" style={{color:"#FFD43B"}}></i>
-                        {calories} Cal 
-                    </CardText>
-                    <CardText>
-                        <i className="fas fa-star me-2 fs-4" style={{color:"#FFD43B"}}></i>
-                        {rating} 
-                        <span className="text-muted ms-2">({reviewCount} reviews)</span> 
-                    </CardText>
-                    <Button color="btn btn-outline-warning" onClick={() => setShowed(false)}>Hide Recipe</Button>
-                </CardFooter>
+                <CardText>
+                    <i className="fas fa-clock me-2 fs-4" style={{color:"#FFD43B"}}></i>
+                    {prepMin + cookMin} min 
+                </CardText>
+                <CardText>
+                <i className="fas fa-bowl-food me-2 fs-4" style={{color:"#FFD43B"}}></i>
+                    Serving: {serving}
+                </CardText>
+                <CardText>
+                    <i className="fas fa-dumbbell me-2 fs-4" style={{color:"#FFD43B"}}></i>
+                    {calories} Cal 
+                </CardText>
+                <CardText>
+                    <i className="fas fa-star me-2 fs-4" style={{color:"#FFD43B"}}></i>
+                    {rating} 
+                    <span className="text-muted ms-2">({reviewCount} reviews)</span> 
+                </CardText>
+                <Button color="btn btn-outline-warning" onClick={() => setShowed(false)}>Hide Recipe</Button>
+            </CardFooter>
             
         </Card>
     ):
     (
         <div className="col-sm-8 col-md-6 col-lg-3">
             <div className="d-flex justify-content-center ">
-                <img src={image} alt={name} className="hiddenImage col-9 img-fluid rounded-circle border z-3 shadow"/>
+                <img src={image} alt={name} className="hiddenImage col-9 img-fluid rounded-circle border shadow"/>
             </div> 
             <Card className="mb-5  pt-5 d-flex">
                 <CardBody className="text-center" >
