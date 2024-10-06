@@ -9,6 +9,8 @@ export function filterRecipe(recipe, query, filterKey){
     )
 
     switch (filterKey){
+        case 0:
+            return recipe;
         case 1:
             return recipe.sort((a,b) => a.rating > b.rating ? -1: 1);
         case 2:

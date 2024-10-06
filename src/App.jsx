@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-// import Banner from "./components/Banner";
 import Loader from "./components/Loader";
 import ListRecipe from "./components/ListRecipe";
 import { filterRecipe } from "./utils/script";
 import { Button, ButtonGroup } from "reactstrap";
 import Banner from "./components/Banner";
-
+import {URL} from "./utils/url";
 
 function App() {
 
@@ -15,7 +14,7 @@ function App() {
 
   
   useEffect(() => {
-    fetch("https://dummyjson.com/recipes")
+    fetch(URL)
     .then(res => res.json())
     .then(recipes => setRecipes(recipes.recipes))
     .catch(error => {console.error("Error of connection while fetching data"), error})
@@ -23,7 +22,6 @@ function App() {
 
   const res = filterRecipe(recipes, searchWord, rSelected);
   
-
   return (
     <div className="container">
       {
@@ -31,7 +29,7 @@ function App() {
         <Loader />:
         <Banner value={searchWord} onChange ={(e) => setSearchWord(e.target.value)} size={res.length}>
           <ButtonGroup>
-              <Button color="btn btn-outline-dark" onClick={() => setRSelected(1)} active={rSelected === 0}>
+              <Button color="btn btn-outline-dark" onClick={() => setRSelected(0)} active={rSelected === 0}>
                 Default
               </Button>
               <Button color="btn btn-outline-dark" onClick={() => setRSelected(1)} active={rSelected === 1}>
