@@ -14,7 +14,7 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
             </CardTitle>
             <CardBody className="d-lg-flex justify-content-between pb-5">
                 <div className="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center mx-auto">
-                    <img src={image} alt={name} className="img-fluid round  ed-circle shadow"/>
+                    <img src={image} alt={name} className="img-fluid rounded-circle shadow"/>
                 </div>
                 <div className="col-md-6 col-sm-12 col-lg-3 pt-5">
                     <h3>The ingredients:</h3>
@@ -59,9 +59,9 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
     (
         <div className="col-sm-8 col-md-6 col-lg-3">
             <div className="d-flex justify-content-center ">
-                <img src={image} alt={name} className="hiddenImage col-9 img-fluid rounded-circle border shadow"/>
+                <img src={image} alt={name} className="hiddenImage col-8 img-fluid rounded-circle border shadow-lg"/>
             </div> 
-            <Card className="mb-5  pt-5 d-flex">
+            <Card className="pt-5 d-flex">
                 <CardBody className="text-center" >
                     <CardTitle className="fw-bold mt-5 pt-5">
                         {name}
