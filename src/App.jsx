@@ -42,7 +42,7 @@ function App() {
             <ButtonGroup>
                 <Button 
                   color="btn btn-outline-dark" 
-                  onClick={() => setRSelected(0)} 
+                  onClick={() => {setRSelected(0); setBeginIndex(0)}} 
                   active={rSelected === 0}
                   style={{fontSize:"14px"}}
                   >
@@ -50,7 +50,7 @@ function App() {
                 </Button>
                 <Button 
                   color="btn btn-outline-dark" 
-                  onClick={() => setRSelected(1)} 
+                  onClick={() => {setRSelected(1); setBeginIndex(0)}} 
                   active={rSelected === 1}
                   style={{fontSize:"14px"}}
                   >
@@ -58,7 +58,7 @@ function App() {
                 </Button>
                 <Button 
                   color="btn btn-outline-dark" 
-                  onClick={() => setRSelected(2)} 
+                  onClick={() => {setRSelected(2);setBeginIndex(0)}} 
                   active={rSelected === 2}
                   style={{fontSize:"14px"}}
                   >
@@ -66,7 +66,7 @@ function App() {
                 </Button>
                 <Button 
                   color="btn btn-outline-dark" 
-                  onClick={() => setRSelected(3)} 
+                  onClick={() => {setRSelected(3); setBeginIndex(0)}} 
                   active={rSelected === 3}
                   style={{fontSize:"14px"}}
                   >
@@ -77,9 +77,7 @@ function App() {
               {
                 pages.map(page => (
                   <PaginationItem key={page}>
-                    <PaginationLink style={{fontSize:"14px"}} onClick={() => {
-                      setBeginIndex((page - 1) * itemPerPage)
-                    }} href="#">
+                    <PaginationLink style={{fontSize:"14px"}} href="#" onClick={() => {setBeginIndex((page - 1) * itemPerPage)}} >
                       {page}
                     </PaginationLink>
                   </PaginationItem>
