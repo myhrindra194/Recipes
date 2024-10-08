@@ -74,6 +74,7 @@ export default function RecipeCard({ name, image, prepMin, cookMin, rating, revi
                 </CardBody>
                 <CardFooter className="d-flex justify-content-between bg-transparent align-items-center">
                     {prepMin + cookMin} min
+                    <br /> {calories} Cal 
                     <Button color="btn btn-outline-warning" onClick={() => setShowed(true)}>View Recipe</Button>
                 </CardFooter>
             </Card>
