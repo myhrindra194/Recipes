@@ -34,7 +34,7 @@ function App() {
         <Banner 
           value={searchWord} 
           onChange ={(e) => {
-            setSearchWord(e.target.value);
+            setSearchWord(e.target.value.trim());
             setBeginIndex(0);
           }} 
           size={res.length}>
@@ -77,7 +77,7 @@ function App() {
               {
                 pages.map(page => (
                   <PaginationItem key={page}>
-                    <PaginationLink style={{fontSize:"14px"}} href="#" onClick={() => {setBeginIndex((page - 1) * itemPerPage)}} >
+                    <PaginationLink style={{fontSize:"14px"}} onClick={() => {setBeginIndex((page - 1) * itemPerPage)}} >
                       {page}
                     </PaginationLink>
                   </PaginationItem>
