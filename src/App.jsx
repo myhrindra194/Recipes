@@ -34,7 +34,7 @@ function App() {
         <Banner 
           value={searchWord} 
           onChange ={(e) => {
-            setSearchWord(e.target.value.trim());
+            setSearchWord(e.target.value);
             setBeginIndex(0);
           }} 
           size={res.length}>

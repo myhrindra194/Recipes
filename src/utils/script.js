@@ -1,6 +1,6 @@
 
 export function filterRecipe(recipe, query, filterKey){
-    query = query.toLowerCase();
+    query = query.trim().toLowerCase();
     recipe = recipe.filter( recipe =>
         recipe.name.toLowerCase().includes(query) ||
         recipe.ingredients.join(" ").toLowerCase().includes(query) ||
