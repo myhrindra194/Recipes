@@ -14,20 +14,19 @@ function App() {
   const [beginIndex, setBeginIndex] = useState(0);
   const itemPerPage = 4;
 
-  
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
     .then(recipes => setRecipes(recipes.recipes))
     .catch(error => {console.error("Error of connection while fetching data"), error})
-  })
+  }, [])
 
   const res = filterRecipe(recipes, searchWord, rSelected);
   const pages =  Array.from({ length: Math.ceil(res.length / itemPerPage) }, (_, i) => i + 1);
   const visibleRecipes = res.slice(beginIndex, beginIndex + itemPerPage);
   
   return (
-    <div className="container">
+    <div className="container mt-4">
       {
         (recipes.length === 0) ?
         <Loader />:
