@@ -15,11 +15,14 @@ function App() {
   const itemPerPage = 4;
 
   useEffect(() => {
-    fetch(URL)
-    .then(res => res.json())
-    .then(recipes => setRecipes(recipes.recipes))
-    .catch(error => {console.error("Error of connection while fetching data"), error})
-  }, [])
+    const fetchData = async() => {
+      let res = await fetch(URL);
+      res = await res.json();
+      return res;
+    }
+ 
+    fetchData().then(res => setRecipes(res.recipes))
+    }, [])
 
   const res = filterRecipe(recipes, searchWord, rSelected);
   const pages =  Array.from({ length: Math.ceil(res.length / itemPerPage) }, (_, i) => i + 1);
