@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import ListRecipe from "./components/ListRecipe";
-import { filterRecipe } from "./utils/script";
+import { filterRecipe } from "./utils/function";
 import { Button, ButtonGroup, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 import Banner from "./components/Banner";
-import {URL} from "./utils/url";
+import { fetchData } from "./utils/fetchData";
 
 function App() {
 
@@ -15,14 +15,8 @@ function App() {
   const itemPerPage = 4;
 
   useEffect(() => {
-    const fetchData = async() => {
-      let res = await fetch(URL);
-      res = await res.json();
-      return res;
-    }
- 
     fetchData().then(res => setRecipes(res.recipes))
-    }, [])
+  }, [])
 
   const res = filterRecipe(recipes, searchWord, rSelected);
   const pages =  Array.from({ length: Math.ceil(res.length / itemPerPage) }, (_, i) => i + 1);
